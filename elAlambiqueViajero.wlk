@@ -18,7 +18,7 @@ object paris {
     const property recuerdo = " llavero de la torre Eiffel"
 
     method puedeLlegar(unVehiculo){
-      unVehiculo.suficienteCombustible()
+      unVehiculo.puedeFuncionar()
     }
 
 }
@@ -58,7 +58,7 @@ object alambiqueVeloz {
 
   
   method esRapido() = true
-  method suficienteCombustible(){
+  method puedeFuncionar(){
     combustible >= 50
   }
   method desgaste(){
@@ -66,3 +66,53 @@ object alambiqueVeloz {
   } 
 }
 
+object superChatarraEspacial{
+    var combustible = 25
+    var municion = 5
+
+    method esRapido() = false
+
+    method recargarMisiles(cantidad){
+        municion += cantidad
+    }
+     
+    method puedeFuncionar(){
+        combustible >= 25
+    }
+
+    method recargarCombustible(cantidad){
+        combustible += cantidad
+    }
+
+    method disparar(cantidad){
+        municion -= cantidad
+        combustible -= 2 * cantidad
+    }
+
+    method desgaste(){
+        combustible -= 25
+    }
+}
+
+object antiguallaBlindada {
+    var combustible = 50
+    var cantidadGangster = 0
+    
+    method aumentarCantidadG(cantidad){
+        cantidadGangster += cantidad
+    }
+    method esRapido() = true 
+    method puedeFuncionar(){
+        combustible >= 50
+    }
+    method desgaste(){
+        combustible -= 50
+        cantidadGangster -= 3
+    }
+
+}
+
+object superConvertible {
+ 
+
+}
